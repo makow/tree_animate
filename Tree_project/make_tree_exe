@@ -1,0 +1,15 @@
+CFLAGS = -Wall -Wextra -Wfloat-equal -std=gnu11 -pedantic -Waggregate-return
+# INCS =
+TARGET = bin/tree_exe
+SOURCES = src/input/input.c src/core/tree.c src/compare/compare.c src/balancing/avl.c src/balancing/wavl.c src/balancing/two-three.c src/balancing/two-four.c
+# LIBS =  ``
+CC = gcc
+
+
+all: $(TARGET)
+
+$(TARGET): $(SOURCES) $(INCS)
+	$(CC) $(SOURCES) -o $(TARGET) $(CFLAGS) $(LIBS)
+
+clean:
+	rm -f $(TARGET)

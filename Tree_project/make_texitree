@@ -1,0 +1,15 @@
+CFLAGS = -lm
+# INCS =
+TARGET = bin/texitree
+SOURCES = src/draw/texitree.c
+# LIBS =
+CC = gcc
+
+
+all: $(TARGET)
+
+$(TARGET): $(SOURCES) $(INCS)
+	$(CC) $(SOURCES) -o $(TARGET) $(CFLAGS) $(LIBS)
+
+clean:
+	rm -f $(TARGET)
